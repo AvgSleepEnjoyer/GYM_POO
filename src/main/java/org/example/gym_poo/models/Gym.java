@@ -1,18 +1,16 @@
 package org.example.gym_poo.models;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Gym implements Serializable {
+public class Gym {
 
-    private static ArrayList<Cliente> clientes;
-
-    public Gym() {
-        clientes = new ArrayList<>();
-    }
+    private static ArrayList<Cliente> clientes = new ArrayList<>();
 
     public static ArrayList<Cliente> getClientes() {
         return clientes;
     }
 
+    public static void setClientes(ArrayList<Cliente> clientes) {
+        Gym.clientes = clientes;
+    }
 }

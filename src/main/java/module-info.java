@@ -8,5 +8,6 @@ module org.example.gym_poo {
     requires java.desktop;
 
     opens org.example.gym_poo to javafx.fxml;
+    opens org.example.gym_poo.controllers to javafx.fxml;
     exports org.example.gym_poo;
 }

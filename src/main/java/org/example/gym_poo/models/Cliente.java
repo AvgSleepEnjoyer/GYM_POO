@@ -1,20 +1,24 @@
 package org.example.gym_poo.models;
 
-public class Cliente {
+import java.io.Serializable;
+
+public class Cliente implements Serializable {
     private int id;
     private String nombre;
     private String telefono;
     private String correo;
     private String membresia;
+    private String metodoPago;
     private int puntos;
 
     // Contructor
-    public Cliente(int id, String nombre, String telefono, String correo, String membresia, int puntos){
+    public Cliente(int id, String nombre, String telefono, String correo, String membresia, String metodoPago, int puntos){
         this.id = id;
         this.nombre = nombre;
         this.telefono = telefono;
         this.correo = correo;
         this.membresia = membresia;
+        this.metodoPago = metodoPago;
         this.puntos = puntos;
     }
 
@@ -24,6 +28,7 @@ public class Cliente {
     public void setTelefono(String telefono) {this.telefono = telefono;}
     public void setCorreo(String correo) {this.correo = correo;}
     public void setMembresia(String membresia) {this.membresia = membresia;}
+    public void setMetodoPago(String metodoPago) {this.metodoPago = metodoPago;}
     public void setPuntos(int puntos) {this.puntos = puntos;}
 
     // Getters
@@ -32,6 +37,7 @@ public class Cliente {
     public String getTelefono() {return telefono;}
     public String getCorreo() {return correo;}
     public String getMembresia() {return membresia;}
+    public String getMetodoPago() {return metodoPago;}
     public int getPuntos() {return puntos;}
 
     @Override
