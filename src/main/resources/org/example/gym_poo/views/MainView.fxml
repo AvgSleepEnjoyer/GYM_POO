@@ -5,21 +5,84 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gym_poo.controllers.MainController">
-   <children>
-      <Button layoutX="117.0" layoutY="276.0" mnemonicParsing="false" onAction="#ingresarClientes" text="Ingresar Clientes" />
-      <Button layoutX="123.0" layoutY="417.0" mnemonicParsing="false" onAction="#actualizarClientes" text="Actualizar Clientes" />
-      <Button layoutX="120.0" layoutY="545.0" mnemonicParsing="false" onAction="#eliminarClientes" text="Eliminar Clientes" />
-      <Button layoutX="126.0" layoutY="683.0" mnemonicParsing="false" onAction="#ingresarClientes" text="Crear Reporte" />
+<AnchorPane prefHeight="800.0"
+            prefWidth="1600.0"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.gym_poo.controllers.MainController">
 
-      <Label layoutX="602.0" layoutY="55.0" text="Panel Administración">
+   <children>
+
+      <!-- Título -->
+      <Label layoutX="560.0"
+             layoutY="60.0"
+             text="Panel Administración">
+
          <font>
-            <Font size="50.0" />
+            <Font size="42.0"/>
          </font>
+
       </Label>
-      <Button layoutX="1317.0" layoutY="278.0" mnemonicParsing="false" onAction="#ingresarClientes" prefWidth="195.0" text="Ingresar Asistencia" />
-      <Button layoutX="1345.0" layoutY="419.0" mnemonicParsing="false" onAction="#ingresarClientes" text="Sistema de Puntos" />
-      <Button layoutX="1340.0" layoutY="547.0" mnemonicParsing="false" onAction="#ingresarClientes" text="Clases Grupales" />
-      <Button layoutX="1335.0" layoutY="682.0" mnemonicParsing="false" onAction="#ingresarClientes" text="Inventario Equipo" />
+
+      <!-- Columna izquierda -->
+
+      <Button layoutX="250.0"
+              layoutY="220.0"
+              prefWidth="250.0"
+              prefHeight="50.0"
+              text="Ingresar Clientes"
+              onAction="#ingresarClientes"/>
+
+      <Button layoutX="250.0"
+              layoutY="320.0"
+              prefWidth="250.0"
+              prefHeight="50.0"
+              text="Actualizar Clientes"
+              onAction="#actualizarClientes"/>
+
+      <Button layoutX="250.0"
+              layoutY="420.0"
+              prefWidth="250.0"
+              prefHeight="50.0"
+              text="Eliminar Clientes"
+              onAction="#eliminarClientes"/>
+
+      <Button layoutX="250.0"
+              layoutY="520.0"
+              prefWidth="250.0"
+              prefHeight="50.0"
+              text="Crear Reporte"
+              onAction="#generarReportes"/>
+
+      <!-- Columna derecha -->
+
+      <Button layoutX="1100.0"
+              layoutY="220.0"
+              prefWidth="250.0"
+              prefHeight="50.0"
+              text="Ingresar Asistencia"
+              onAction="#ingresarClientes"/>
+
+      <Button layoutX="1100.0"
+              layoutY="320.0"
+              prefWidth="250.0"
+              prefHeight="50.0"
+              text="Sistema de Puntos"
+              onAction="#ingresarClientes"/>
+
+      <Button layoutX="1100.0"
+              layoutY="420.0"
+              prefWidth="250.0"
+              prefHeight="50.0"
+              text="Clases Grupales"
+              onAction="#ingresarClientes"/>
+
+      <Button layoutX="1100.0"
+              layoutY="520.0"
+              prefWidth="250.0"
+              prefHeight="50.0"
+              text="Inventario Equipo"
+              onAction="#ingresarClientes"/>
+
    </children>
 </AnchorPane>

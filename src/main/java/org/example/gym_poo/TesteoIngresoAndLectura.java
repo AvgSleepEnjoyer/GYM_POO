@@ -2,6 +2,7 @@ package org.example.gym_poo;
 
 import org.example.gym_poo.models.Cliente;
 import org.example.gym_poo.service.ClienteService;
+import org.example.gym_poo.utils.ReporteTxt;
 
 import java.util.ArrayList;
 
@@ -13,47 +14,22 @@ public class TesteoIngresoAndLectura {
 
         ArrayList<Cliente> clientes = new ArrayList<>();
 
-        clientes.add(new Cliente(
-                1,
-                "Diego",
-                "8123",
-                "diego@gmail.com",
-                "Plus",
-                "Tarjeta",
-                120
-        ));
+        clientes.add(new Cliente(1,"Diego","8123","diego@gmail.com","Plus", "Si" ,"Tarjeta",120,1500));
+        clientes.add(new Cliente(2,"Ana","8111","ana@gmail.com","Premium", "No", "Efectivo",300,1000));
+        clientes.add(new Cliente(3, "Luis", "8222", "luis@gmail.com", "Basica", "Si", "Transferencia", 50, 500));
 
-        clientes.add(new Cliente(
-                2,
-                "Ana",
-                "8111",
-                "ana@gmail.com",
-                "Premium",
-                "Efectivo",
-                300
-        ));
+        clienteService.guardarClientesDat(clientes); // Esto se guarda en .dat y se usa como base de datos
 
-        clientes.add(new Cliente(
-                3,
-                "Luis",
-                "8222",
-                "luis@gmail.com",
-                "Basica",
-                "Transferencia",
-                50
-        ));
 
-        clienteService.guardarClientes(clientes);
+        ReporteTxt reporteTxt = new ReporteTxt();
+        reporteTxt.guardarTxt(clientes);
 
-        System.out.println("Clientes guardados");
 
-        ArrayList<Cliente> cargados =
-                clienteService.cargarClientes();
+        ArrayList<Cliente> cargados = clienteService.cargarClientes();
 
         System.out.println();
 
         for (Cliente cliente : cargados) {
-
             System.out.println(cliente.getNombre());
         }
     }
