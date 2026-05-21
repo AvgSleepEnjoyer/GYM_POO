@@ -2,75 +2,84 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0"
-            prefWidth="1600.0"
+<AnchorPane prefHeight="800"
+            prefWidth="1600"
+            styleClass="root-pane"
             xmlns="http://javafx.com/javafx/26"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="org.example.gym_poo.controllers.ClientesController">
 
    <children>
 
-      <Label layoutX="220.0"
-             layoutY="40.0"
-             text="Eliminar Cliente">
+      <AnchorPane prefWidth="220"
+                  prefHeight="800"
+                  styleClass="sidebar">
 
-         <font>
-            <Font size="22.0"/>
-         </font>
+         <children>
 
-      </Label>
+            <Label layoutX="35"
+                   layoutY="40"
+                   text="GYM_POO"
+                   styleClass="sidebar-title"/>
 
-      <Label layoutX="80.0"
-             layoutY="100.0"
-             text="ID Cliente"/>
+         </children>
+
+      </AnchorPane>
+
+      <Label layoutX="280"
+             layoutY="40"
+             text="Eliminar Cliente"
+             styleClass="title"/>
+
+      <Label layoutX="280" layoutY="100" text="ID Cliente"/>
 
       <TextField fx:id="txtIdEliminar"
-                 layoutX="80.0"
-                 layoutY="125.0"/>
+                 layoutX="280"
+                 layoutY="125"/>
 
-      <Button layoutX="250.0"
-              layoutY="125.0"
+      <Button layoutX="450"
+              layoutY="125"
               text="Buscar"
               onAction="#buscarClienteEliminar"/>
 
-      <Label layoutX="80.0"
-             layoutY="220.0"
+      <Label layoutX="280"
+             layoutY="220"
              text="Nombre"/>
 
       <TextField fx:id="txtNombreEliminar"
                  editable="false"
-                 layoutX="80.0"
-                 layoutY="245.0"/>
+                 layoutX="280"
+                 layoutY="245"/>
 
-      <Label layoutX="80.0"
-             layoutY="300.0"
+      <Label layoutX="280"
+             layoutY="300"
              text="Telefono"/>
 
       <TextField fx:id="txtTelefonoEliminar"
                  editable="false"
-                 layoutX="80.0"
-                 layoutY="325.0"/>
+                 layoutX="280"
+                 layoutY="325"/>
 
-      <Label layoutX="80.0"
-             layoutY="380.0"
+      <Label layoutX="280"
+             layoutY="380"
              text="Correo"/>
 
       <TextField fx:id="txtCorreoEliminar"
                  editable="false"
-                 layoutX="80.0"
-                 layoutY="405.0"/>
+                 layoutX="280"
+                 layoutY="405"/>
 
-      <Button layoutX="80.0"
-              layoutY="520.0"
+      <Button layoutX="280"
+              layoutY="520"
               text="Eliminar Cliente"
               onAction="#eliminarCliente"/>
 
-      <Button layoutX="250.0"
-              layoutY="520.0"
+      <Button layoutX="480"
+              layoutY="520"
               text="Volver al Inicio"
               onAction="#volverMain"/>
 
    </children>
+
 </AnchorPane>

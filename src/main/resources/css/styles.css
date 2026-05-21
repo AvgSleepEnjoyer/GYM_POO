@@ -1,0 +1,76 @@
+/* Fondo general */
+.root-pane {
+    -fx-background-color: #E5E7EB;
+}
+
+/* Sidebar */
+.sidebar {
+    -fx-background-color: #1F2937;
+}
+
+/* Logo */
+.logo-label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* Título principal */
+.title-label {
+    -fx-text-fill: #1F2937;
+    -fx-font-weight: bold;
+}
+
+/* Botones */
+.menu-button {
+
+    -fx-background-color: #2563EB;
+    -fx-text-fill: white;
+
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+}
+
+/* Hover */
+.menu-button:hover {
+    -fx-background-color: #1D4ED8;
+}
+
+.root-pane {
+    -fx-background-color: #f1f3f6;
+}
+
+.sidebar {
+    -fx-background-color: #1f2937;
+}
+
+.sidebar-title {
+    -fx-text-fill: white;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+
+.title {
+    -fx-font-size: 34px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2937;
+}
+
+.button {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #1d4ed8;
+}
+
+.text-field {
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+}

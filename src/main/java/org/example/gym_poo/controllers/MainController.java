@@ -1,60 +1,106 @@
 package org.example.gym_poo.controllers;
-import org.example.gym_poo.MainApp;
-import org.example.gym_poo.models.Gym;
-import org.example.gym_poo.utils.ReporteTxt;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.event.ActionEvent;
-
 
 import java.io.IOException;
 
 public class MainController {
+
+    private void cambiarVista(ActionEvent event,String fxml) throws IOException {
+
+        Parent root = FXMLLoader.load(getClass().getResource(fxml));
+
+        Scene scene = new Scene(root);
+
+        scene.getStylesheets().add(getClass().getResource("/css/styles.css").toExternalForm());
+
+        Stage stage = (Stage) ((javafx.scene.Node)
+                event.getSource())
+                .getScene()
+                .getWindow();
+
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void ingresarClientes(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/org/example/gym_poo/views/IngresarCliente.fxml"));
-        Stage stage = (Stage) ((javafx.scene.Node)
-                event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
+
+        cambiarVista(event,"/org/example/gym_poo/views/IngresarCliente.fxml");
     }
 
-    public void actualizarClientes(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/org/example/gym_poo/views/ActualizarCliente.fxml"));
-        Stage stage = (Stage) ((javafx.scene.Node)
-                event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
+    public void actualizarClientes(ActionEvent event)
+            throws IOException {
+
+        cambiarVista(
+                event,
+                "/org/example/gym_poo/views/ActualizarCliente.fxml"
+        );
     }
 
-    public void eliminarClientes(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/org/example/gym_poo/views/EliminarCliente.fxml"));
-        Stage stage = (Stage) ((javafx.scene.Node)
-                event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
+    public void eliminarClientes(ActionEvent event)
+            throws IOException {
+
+        cambiarVista(
+                event,
+                "/org/example/gym_poo/views/EliminarCliente.fxml"
+        );
     }
 
-    public void generarReportes(ActionEvent event) throws IOException {
+    public void generarReportes(ActionEvent event)
+            throws IOException {
 
-        Parent root = FXMLLoader.load(
-                getClass().getResource("/org/example/gym_poo/views/ReporteCreado.fxml"));
-
-        Stage stage = (Stage) ((javafx.scene.Node)
-                event.getSource()).getScene().getWindow();
-
-        stage.setScene(new Scene(root));
-
-        stage.show();
-
-        ReporteTxt reporteTxt = new ReporteTxt();
-
-        reporteTxt.guardarTxt(MainApp.getClientes());
-
+        cambiarVista(
+                event,
+                "/org/example/gym_poo/views/ReportesView.fxml"
+        );
     }
 
+    public void asistencia(ActionEvent event)
+            throws IOException {
 
+        cambiarVista(
+                event,
+                "/org/example/gym_poo/views/Asistencia.fxml"
+        );
+    }
 
+    public void salida(ActionEvent event)
+            throws IOException {
+
+        cambiarVista(
+                event,
+                "/org/example/gym_poo/views/SalidaView.fxml"
+        );
+    }
+
+    public void sistemaPuntos(ActionEvent event)
+            throws IOException {
+
+        cambiarVista(
+                event,
+                "/org/example/gym_poo/views/SistemaPuntos.fxml"
+        );
+    }
+
+    public void clases(ActionEvent event)
+            throws IOException {
+
+        cambiarVista(
+                event,
+                "/org/example/gym_poo/views/ClasesView.fxml"
+        );
+    }
+
+    public void equipo(ActionEvent event)
+            throws IOException {
+
+        cambiarVista(
+                event,
+                "/org/example/gym_poo/views/InventarioEquipoView.fxml"
+        );
+    }
 }

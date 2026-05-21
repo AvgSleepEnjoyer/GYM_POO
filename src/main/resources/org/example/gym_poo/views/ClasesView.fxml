@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="800"
+            prefWidth="1600"
+            styleClass="root-pane"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.gym_poo.controllers.ClasesController">
+
+    <children>
+
+        <AnchorPane prefWidth="220"
+                    prefHeight="800"
+                    styleClass="sidebar">
+
+            <children>
+
+                <Label layoutX="35"
+                       layoutY="40"
+                       text="GYM_POO"
+                       styleClass="sidebar-title"/>
+
+            </children>
+
+        </AnchorPane>
+
+        <Label layoutX="300"
+               layoutY="30"
+               text="Clases Grupales"
+               styleClass="title"/>
+
+        <Button layoutX="300"
+                layoutY="100"
+                prefWidth="180"
+                text="Agregar Clase"
+                onAction="#agregarClase"/>
+
+        <Button layoutX="500"
+                layoutY="100"
+                prefWidth="180"
+                text="Volver"
+                onAction="#volverMain"/>
+
+        <TableView fx:id="tablaClases"
+                   layoutX="300"
+                   layoutY="170"
+                   prefWidth="1200"
+                   prefHeight="550">
+
+            <columns>
+
+                <TableColumn fx:id="colId"
+                             text="ID"
+                             prefWidth="80"/>
+
+                <TableColumn fx:id="colNombre"
+                             text="Clase"
+                             prefWidth="300"/>
+
+                <TableColumn fx:id="colDia"
+                             text="Día"
+                             prefWidth="250"/>
+
+                <TableColumn fx:id="colHora"
+                             text="Hora"
+                             prefWidth="250"/>
+
+                <TableColumn fx:id="colCupo"
+                             text="Cupo"
+                             prefWidth="150"/>
+
+            </columns>
+
+        </TableView>
+
+    </children>
+
+</AnchorPane>

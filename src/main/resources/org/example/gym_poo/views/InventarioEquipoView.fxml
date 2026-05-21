@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="800"
+            prefWidth="1600"
+            styleClass="root-pane"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.gym_poo.controllers.InventarioEquipoController">
+
+    <children>
+
+        <AnchorPane prefWidth="220"
+                    prefHeight="800"
+                    styleClass="sidebar">
+
+            <children>
+
+                <Label layoutX="35"
+                       layoutY="40"
+                       text="GYM_POO"
+                       styleClass="sidebar-title"/>
+
+            </children>
+
+        </AnchorPane>
+
+        <Label layoutX="300"
+               layoutY="40"
+               text="Inventario de Equipo"
+               styleClass="title"/>
+
+        <Button layoutX="300"
+                layoutY="100"
+                text="Agregar Equipo"
+                onAction="#agregarEquipo"/>
+
+        <Button layoutX="470"
+                layoutY="100"
+                text="Eliminar Equipo"
+                onAction="#eliminarEquipo"/>
+
+        <Button layoutX="650"
+                layoutY="100"
+                text="Volver"
+                onAction="#volverMain"/>
+
+        <TableView fx:id="tablaEquipos"
+                   layoutX="300"
+                   layoutY="170"
+                   prefWidth="1200"
+                   prefHeight="550">
+
+            <columns>
+
+                <TableColumn fx:id="colId"
+                             text="ID"
+                             prefWidth="100"/>
+
+                <TableColumn fx:id="colNombre"
+                             text="Nombre"
+                             prefWidth="400"/>
+
+                <TableColumn fx:id="colCantidad"
+                             text="Cantidad"
+                             prefWidth="200"/>
+
+                <TableColumn fx:id="colEstado"
+                             text="Estado"
+                             prefWidth="300"/>
+
+            </columns>
+
+        </TableView>
+
+    </children>
+
+</AnchorPane>

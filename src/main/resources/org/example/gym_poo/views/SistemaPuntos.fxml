@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="800"
+            prefWidth="1600"
+            styleClass="root-pane"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.gym_poo.controllers.SistemaPuntosController">
+
+    <children>
+
+        <AnchorPane prefWidth="220"
+                    prefHeight="800"
+                    styleClass="sidebar">
+
+            <children>
+
+                <Label layoutX="35"
+                       layoutY="40"
+                       text="GYM_POO"
+                       styleClass="sidebar-title"/>
+
+            </children>
+
+        </AnchorPane>
+
+        <Label layoutX="280"
+               layoutY="40"
+               text="Sistema de Puntos"
+               styleClass="title"/>
+
+        <Label layoutX="280"
+               layoutY="120"
+               text="ID Cliente"/>
+
+        <TextField fx:id="txtIdBuscar"
+                   layoutX="280"
+                   layoutY="145"/>
+
+        <Button layoutX="450"
+                layoutY="145"
+                text="Buscar"
+                onAction="#buscarCliente"/>
+
+        <Label layoutX="280"
+               layoutY="250"
+               text="Nombre"/>
+
+        <TextField fx:id="txtNombre"
+                   editable="false"
+                   layoutX="280"
+                   layoutY="275"/>
+
+        <Label layoutX="280"
+               layoutY="330"
+               text="Puntos Actuales"/>
+
+        <TextField fx:id="txtPuntosActuales"
+                   editable="false"
+                   layoutX="280"
+                   layoutY="355"/>
+
+        <Label layoutX="280"
+               layoutY="430"
+               text="Puntos a Agregar"/>
+
+        <TextField fx:id="txtPuntosAgregar"
+                   layoutX="280"
+                   layoutY="455"/>
+
+        <Button layoutX="280"
+                layoutY="550"
+                text="Agregar Puntos"
+                onAction="#agregarPuntos"/>
+
+        <Button layoutX="480"
+                layoutY="550"
+                text="Volver al Inicio"
+                onAction="#volverMain"/>
+
+    </children>
+
+</AnchorPane>

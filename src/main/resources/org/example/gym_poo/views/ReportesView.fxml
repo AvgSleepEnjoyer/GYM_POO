@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="800"
+            prefWidth="1600"
+            styleClass="root-pane"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.gym_poo.controllers.ReporteController">
+
+    <children>
+
+        <AnchorPane prefWidth="220"
+                    prefHeight="800"
+                    styleClass="sidebar">
+
+            <children>
+
+                <Label layoutX="35"
+                       layoutY="40"
+                       text="GYM_POO"
+                       styleClass="sidebar-title"/>
+
+            </children>
+
+        </AnchorPane>
+
+        <Label layoutX="300"
+               layoutY="60"
+               text="Reportes"
+               styleClass="title"/>
+
+        <Button layoutX="300"
+                layoutY="220"
+                prefWidth="280"
+                text="Generar Reporte Clientes"
+                onAction="#reporteClientes"/>
+
+        <Button layoutX="300"
+                layoutY="320"
+                prefWidth="280"
+                text="Generar Reporte Accesos"
+                onAction="#reporteAccesos"/>
+
+        <Button layoutX="300"
+                layoutY="420"
+                prefWidth="280"
+                text="Volver"
+                onAction="#volverMain"/>
+
+    </children>
+
+</AnchorPane>

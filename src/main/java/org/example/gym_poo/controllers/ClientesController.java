@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 
 import org.example.gym_poo.MainApp;
 import org.example.gym_poo.models.Cliente;
+import org.example.gym_poo.service.ClienteService;
 
 import java.io.IOException;
 
@@ -36,6 +37,13 @@ public class ClientesController {
     private String membresiaSeleccionada = "";
     private String metodoPagoSeleccionado = "";
 
+    private final ClienteService clienteService =
+            new ClienteService();
+
+    // =========================
+    // MEMBRESIAS
+    // =========================
+
     @FXML
     private void seleccionarBasica() {
         membresiaSeleccionada = "Basica";
@@ -53,6 +61,10 @@ public class ClientesController {
         membresiaSeleccionada = "Premium";
         btnMembresia.setText("Premium");
     }
+
+    // =========================
+    // METODOS DE PAGO
+    // =========================
 
     @FXML
     private void seleccionarEfectivo() {
@@ -72,6 +84,10 @@ public class ClientesController {
         btnMetodoPago.setText("Transferencia");
     }
 
+    // =========================
+    // ELIMINAR CLIENTE
+    // =========================
+
     @FXML
     private TextField txtIdEliminar;
 
@@ -86,6 +102,10 @@ public class ClientesController {
 
     private Cliente clienteEliminar;
 
+    // =========================
+    // REGISTRAR CLIENTE
+    // =========================
+
     @FXML
     private void registrarCliente() {
 
@@ -93,13 +113,14 @@ public class ClientesController {
         String telefono = txtTelefono.getText().trim();
         String correo = txtCorreo.getText().trim();
 
-        if (nombre.isEmpty() ||
-                telefono.isEmpty() ||
-                correo.isEmpty() ||
-                membresiaSeleccionada.isEmpty() ||
-                metodoPagoSeleccionado.isEmpty()) {
+        if (nombre.isEmpty()
+                || telefono.isEmpty()
+                || correo.isEmpty()
+                || membresiaSeleccionada.isEmpty()
+                || metodoPagoSeleccionado.isEmpty()) {
 
-            Alert alert = new Alert(Alert.AlertType.WARNING);
+            Alert alert =
+                    new Alert(Alert.AlertType.WARNING);
 
             alert.setTitle("Campos incompletos");
             alert.setHeaderText(null);
@@ -108,34 +129,70 @@ public class ClientesController {
             );
 
             alert.showAndWait();
-
             return;
         }
 
         Cliente cliente = new Cliente(
-                MainApp.getClientes().size() + 1,
+                generarNuevoId(),
                 nombre,
                 telefono,
                 correo,
                 membresiaSeleccionada,
-                "Si", // Membresía activa por defecto
+                "Si",
                 metodoPagoSeleccionado,
-                0,    // visitas iniciales
-                0     // total pagado inicial
+                0,
+                0
         );
 
-        MainApp.getClientes().add(cliente);
+        MainApp.getGym()
+                .getClientes()
+                .add(cliente);
 
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        clienteService.guardarClientesDat(
+                MainApp.getGym().getClientes()
+        );
+
+        Alert alert =
+                new Alert(Alert.AlertType.INFORMATION);
 
         alert.setTitle("Cliente registrado");
         alert.setHeaderText(null);
-        alert.setContentText("Cliente agregado correctamente.");
+        alert.setContentText(
+                "Cliente agregado correctamente."
+        );
 
         alert.showAndWait();
 
         limpiarFormulario();
+
+        // GUARDAR EN clientes.dat
+        clienteService.guardarClientesDat(
+                MainApp.getGym().getClientes()
+        );
     }
+
+    // =========================
+    // GENERAR ID
+    // =========================
+
+    private int generarNuevoId() {
+
+        int maxId = 0;
+
+        for (Cliente cliente :
+                MainApp.getGym().getClientes()) {
+
+            if (cliente.getId() > maxId) {
+                maxId = cliente.getId();
+            }
+        }
+
+        return maxId + 1;
+    }
+
+    // =========================
+    // LIMPIAR
+    // =========================
 
     @FXML
     private void limpiarFormulario() {
@@ -152,6 +209,10 @@ public class ClientesController {
 
         txtNombre.requestFocus();
     }
+
+    // =========================
+    // BUSCAR CLIENTE
+    // =========================
 
     @FXML
     private void buscarClienteEliminar() {
@@ -176,7 +237,8 @@ public class ClientesController {
 
             clienteEliminar = null;
 
-            for (Cliente cliente : MainApp.getClientes()) {
+            for (Cliente cliente :
+                    MainApp.getGym().getClientes()) {
 
                 if (cliente.getId() == id) {
 
@@ -217,6 +279,10 @@ public class ClientesController {
         }
     }
 
+    // =========================
+    // ELIMINAR
+    // =========================
+
     @FXML
     private void eliminarCliente() {
 
@@ -240,11 +306,16 @@ public class ClientesController {
                 "¿Desea eliminar este cliente?"
         );
 
-        if (confirmacion.showAndWait().get()
+        if (confirmacion.showAndWait().orElse(ButtonType.CANCEL)
                 == ButtonType.OK) {
 
-            MainApp.getClientes()
+            MainApp.getGym()
+                    .getClientes()
                     .remove(clienteEliminar);
+
+            clienteService.guardarClientesDat(
+                    MainApp.getGym().getClientes()
+            );
 
             txtIdEliminar.clear();
             txtNombreEliminar.clear();
@@ -253,6 +324,12 @@ public class ClientesController {
 
             clienteEliminar = null;
 
+            // GUARDAR EN clientes.dat
+            clienteService.guardarClientesDat(
+                    MainApp.getGym().getClientes()
+            );
+
+
             mostrarAlerta(
                     Alert.AlertType.INFORMATION,
                     "Éxito",
@@ -260,6 +337,10 @@ public class ClientesController {
             );
         }
     }
+
+    // =========================
+    // ALERTAS
+    // =========================
 
     private void mostrarAlerta(
             Alert.AlertType tipo,
@@ -275,19 +356,36 @@ public class ClientesController {
         alert.showAndWait();
     }
 
-    @FXML
-    private void volverMain(ActionEvent event) throws IOException {
+    // =========================
+    // VOLVER AL MENU
+    // =========================
 
-        Parent root = FXMLLoader.load(
-                getClass().getResource("/org/example/gym_poo/views/MainView.fxml")
+    @FXML
+    private void volverMain(ActionEvent event)
+            throws IOException {
+
+        Parent root =
+                FXMLLoader.load(
+                        getClass().getResource(
+                                "/org/example/gym_poo/views/MainView.fxml"
+                        )
+                );
+
+        Scene scene = new Scene(root);
+
+        scene.getStylesheets().add(
+                getClass()
+                        .getResource("/css/styles.css")
+                        .toExternalForm()
         );
 
-        Stage stage = (Stage) ((javafx.scene.Node)
-                event.getSource()).getScene().getWindow();
+        Stage stage =
+                (Stage) ((javafx.scene.Node)
+                        event.getSource())
+                        .getScene()
+                        .getWindow();
 
-        stage.setScene(new Scene(root));
+        stage.setScene(scene);
         stage.show();
     }
-
-
 }

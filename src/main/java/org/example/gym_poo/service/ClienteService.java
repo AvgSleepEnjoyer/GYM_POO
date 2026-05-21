@@ -6,6 +6,7 @@ import org.example.gym_poo.models.Gym;
 
 import java.io.*;
 import java.util.ArrayList;
+import org.example.gym_poo.service.ClienteService;
 
 public class ClienteService {
 
@@ -22,6 +23,8 @@ public class ClienteService {
     }
 
     public ArrayList<Cliente> cargarClientes() {
+
+
         try (ObjectInputStream ois =new ObjectInputStream(new FileInputStream(ARCHIVO))) {return (ArrayList<Cliente>) ois.readObject();
 
         } catch (IOException | ClassNotFoundException e) {

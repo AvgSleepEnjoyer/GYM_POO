@@ -9,5 +9,6 @@ module org.example.gym_poo {
 
     opens org.example.gym_poo to javafx.fxml;
     opens org.example.gym_poo.controllers to javafx.fxml;
+    opens org.example.gym_poo.models to javafx.base;
     exports org.example.gym_poo;
 }

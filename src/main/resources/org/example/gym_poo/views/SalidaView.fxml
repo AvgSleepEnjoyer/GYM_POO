@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="800.0"
+            prefWidth="1600.0"
+            styleClass="root-pane"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.gym_poo.controllers.AsistenciaController">
+
+    <children>
+
+        <!-- SIDEBAR -->
+
+        <AnchorPane prefWidth="220"
+                    prefHeight="800"
+                    styleClass="sidebar">
+
+            <children>
+
+                <Label layoutX="35"
+                       layoutY="40"
+                       text="GYM_POO"
+                       styleClass="sidebar-title"/>
+
+            </children>
+
+        </AnchorPane>
+
+        <!-- TITULO -->
+
+        <Label layoutX="280"
+               layoutY="40"
+               text="Registrar Salida"
+               styleClass="title"/>
+
+        <!-- ID CLIENTE -->
+
+        <Label layoutX="280"
+               layoutY="140"
+               text="ID Cliente"/>
+
+        <TextField fx:id="txtIdSalida"
+                   layoutX="280"
+                   layoutY="165"
+                   prefWidth="180"/>
+
+        <Button layoutX="480"
+                layoutY="165"
+                text="Buscar"
+                onAction="#buscarClienteSalida"/>
+
+        <!-- DATOS -->
+
+        <Label layoutX="280"
+               layoutY="250"
+               text="Nombre"/>
+
+        <TextField fx:id="txtNombreSalida"
+                   layoutX="280"
+                   layoutY="275"
+                   prefWidth="300"
+                   editable="false"/>
+
+        <Label layoutX="280"
+               layoutY="350"
+               text="Hora Entrada"/>
+
+        <TextField fx:id="txtEntrada"
+                   layoutX="280"
+                   layoutY="375"
+                   prefWidth="300"
+                   editable="false"/>
+
+        <!-- HORA SALIDA -->
+
+        <Label layoutX="280"
+               layoutY="450"
+               text="Hora Salida"/>
+
+        <TextField fx:id="txtSalidaManual"
+                   layoutX="280"
+                   layoutY="475"
+                   prefWidth="300"
+                   promptText="18:30 o dejar vacío para hora actual"/>
+
+        <!-- BOTONES -->
+
+        <Button layoutX="280"
+                layoutY="570"
+                prefWidth="180"
+                text="Registrar Salida"
+                onAction="#registrarSalida"/>
+
+        <Button layoutX="480"
+                layoutY="570"
+                prefWidth="180"
+                text="Volver al Inicio"
+                onAction="#volverMain"/>
+
+    </children>
+
+</AnchorPane>

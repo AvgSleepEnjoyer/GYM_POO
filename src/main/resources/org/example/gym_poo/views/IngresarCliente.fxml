@@ -2,98 +2,125 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
-<?import javafx.collections.FXCollections?>
-<?import java.lang.String?>
 <AnchorPane prefHeight="800.0"
             prefWidth="1600.0"
+            styleClass="root-pane"
             xmlns="http://javafx.com/javafx/26"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="org.example.gym_poo.controllers.ClientesController">
 
    <children>
 
-      <Label layoutX="250.0" layoutY="36.0" text="Ingresar Nuevo Cliente">
-         <font>
-            <Font size="22.0"/>
-         </font>
-      </Label>
+      <AnchorPane prefWidth="220"
+                  prefHeight="800"
+                  styleClass="sidebar">
 
-      <!-- Nombre -->
-      <Label layoutX="80.0" layoutY="80.0" text="Nombre"/>
+         <children>
+
+            <Label layoutX="35"
+                   layoutY="40"
+                   text="GYM_POO"
+                   styleClass="sidebar-title"/>
+
+         </children>
+
+      </AnchorPane>
+
+      <Label layoutX="280"
+             layoutY="40"
+             text="Ingresar Nuevo Cliente"
+             styleClass="title"/>
+
+      <Label layoutX="280" layoutY="100" text="Nombre"/>
+
       <TextField fx:id="txtNombre"
-                 layoutX="80.0"
-                 layoutY="105.0"
-                 prefWidth="250.0"/>
+                 layoutX="280"
+                 layoutY="125"
+                 prefWidth="250"/>
 
-      <!-- Teléfono -->
-      <Label layoutX="80.0" layoutY="150.0" text="Teléfono"/>
+      <Label layoutX="280" layoutY="190" text="Teléfono"/>
+
       <TextField fx:id="txtTelefono"
-                 layoutX="80.0"
-                 layoutY="175.0"
-                 prefWidth="250.0"/>
+                 layoutX="280"
+                 layoutY="215"
+                 prefWidth="250"/>
 
-      <!-- Correo -->
-      <Label layoutX="80.0" layoutY="220.0" text="Correo"/>
+      <Label layoutX="280" layoutY="280" text="Correo"/>
+
       <TextField fx:id="txtCorreo"
-                 layoutX="80.0"
-                 layoutY="245.0"
-                 prefWidth="250.0"/>
+                 layoutX="280"
+                 layoutY="305"
+                 prefWidth="250"/>
 
-      <!-- Membresía -->
-      <Label layoutX="80.0" layoutY="290.0" text="Membresía"/>
+      <Label layoutX="280"
+             layoutY="370"
+             text="Membresía"/>
 
       <SplitMenuButton fx:id="btnMembresia"
-                       layoutX="80.0"
-                       layoutY="315.0"
-                       prefWidth="180.0"
+                       layoutX="280"
+                       layoutY="395"
+                       prefWidth="180"
                        text="--Ninguna--">
 
          <items>
-            <MenuItem text="Basica" onAction="#seleccionarBasica"/>
-            <MenuItem text="Plus" onAction="#seleccionarPlus"/>
-            <MenuItem text="Premium" onAction="#seleccionarPremium"/>
+
+            <MenuItem text="Basica"
+                      onAction="#seleccionarBasica"/>
+
+            <MenuItem text="Plus"
+                      onAction="#seleccionarPlus"/>
+
+            <MenuItem text="Premium"
+                      onAction="#seleccionarPremium"/>
+
          </items>
 
       </SplitMenuButton>
 
-      <!-- Metodo de pago -->
-      <Label layoutX="80.0" layoutY="370.0" text="Método de Pago"/>
+      <Label layoutX="600"
+             layoutY="370"
+             text="Método de Pago"/>
 
       <SplitMenuButton fx:id="btnMetodoPago"
-                       layoutX="80.0"
-                       layoutY="395.0"
-                       prefWidth="180.0"
+                       layoutX="600"
+                       layoutY="395"
+                       prefWidth="180"
                        text="--Ninguno--">
 
          <items>
-            <MenuItem text="Efectivo" onAction="#seleccionarEfectivo"/>
-            <MenuItem text="Tarjeta" onAction="#seleccionarTarjeta"/>
-            <MenuItem text="Transferencia" onAction="#seleccionarTransferencia"/>
+
+            <MenuItem text="Efectivo"
+                      onAction="#seleccionarEfectivo"/>
+
+            <MenuItem text="Tarjeta"
+                      onAction="#seleccionarTarjeta"/>
+
+            <MenuItem text="Transferencia"
+                      onAction="#seleccionarTransferencia"/>
+
          </items>
 
       </SplitMenuButton>
 
-
-      <!-- Botones -->
-      <Button layoutX="80.0"
-              layoutY="520.0"
-              prefWidth="150.0"
+      <Button layoutX="280"
+              layoutY="550"
+              prefWidth="180"
               text="Registrar Cliente"
               onAction="#registrarCliente"/>
 
-      <Button layoutX="250.0"
-              layoutY="520.0"
-              prefWidth="150.0"
+      <Button layoutX="480"
+              layoutY="550"
+              prefWidth="150"
               text="Limpiar"
               onAction="#limpiarFormulario"/>
 
-      <Button layoutX="420.0"
-              layoutY="520.0"
-              prefWidth="150.0"
+      <Button layoutX="650"
+              layoutY="550"
+              prefWidth="180"
               text="Volver al Inicio"
               onAction="#volverMain"/>
 
    </children>
+
 </AnchorPane>

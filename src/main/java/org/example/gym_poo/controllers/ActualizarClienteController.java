@@ -11,11 +11,16 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import org.example.gym_poo.MainApp;
+import org.example.gym_poo.service.ClienteService;
 import org.example.gym_poo.models.Cliente;
 
 import java.io.IOException;
 
 public class ActualizarClienteController {
+
+
+    private final ClienteService clienteService =
+            new ClienteService();
 
     @FXML
     private TextField txtIdBuscar;
@@ -64,7 +69,7 @@ public class ActualizarClienteController {
 
             clienteSeleccionado = null;
 
-            for (Cliente cliente : MainApp.getClientes()) {
+            for (Cliente cliente : MainApp.getGym().getClientes()) {
 
                 if (cliente.getId() == idBuscado) {
 
@@ -184,11 +189,19 @@ public class ActualizarClienteController {
                     puntos
             );
 
+            // GUARDAR EN clientes.dat
+            clienteService.guardarClientesDat(
+                    MainApp.getGym().getClientes()
+            );
+
+
             mostrarAlerta(
                     Alert.AlertType.INFORMATION,
                     "Éxito",
                     "Cliente actualizado correctamente."
             );
+
+
 
         } catch (NumberFormatException e) {
 
@@ -234,17 +247,21 @@ public class ActualizarClienteController {
         activaSeleccionada = "No";
         btnActiva.setText("No");
     }
-
     @FXML
     private void volverMain(ActionEvent event)
             throws IOException {
 
-        Parent root =
-                FXMLLoader.load(
-                        getClass().getResource(
-                                "/org/example/gym_poo/views/MainView.fxml"
-                        )
-                );
+        Parent root = FXMLLoader.load(
+                getClass().getResource(
+                        "/org/example/gym_poo/views/MainView.fxml"));
+
+        Scene scene = new Scene(root);
+
+        scene.getStylesheets().add(
+                getClass()
+                        .getResource("/css/styles.css")
+                        .toExternalForm()
+        );
 
         Stage stage =
                 (Stage) ((javafx.scene.Node)
@@ -252,10 +269,7 @@ public class ActualizarClienteController {
                         .getScene()
                         .getWindow();
 
-        stage.setScene(
-                new Scene(root)
-        );
-
+        stage.setScene(scene);
         stage.show();
     }
 

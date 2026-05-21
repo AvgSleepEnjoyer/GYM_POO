@@ -6,52 +6,77 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import org.example.gym_poo.models.Cliente;
+import org.example.gym_poo.models.Gym;
 import org.example.gym_poo.service.ClienteService;
+import org.example.gym_poo.service.AccesoService;
+import org.example.gym_poo.service.ClaseService;
+import org.example.gym_poo.service.EquipoService;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class MainApp extends Application {
 
-    private static ArrayList<Cliente> clientes;
+    private static Gym gym;
+
+    public static Gym getGym() {
+        return gym;
+    }
 
     @Override
     public void start(Stage stage) throws IOException {
 
         ClienteService clienteService = new ClienteService();
+        AccesoService accesoService = new AccesoService();
+        ClaseService claseService = new ClaseService();
+        EquipoService equipoService = new EquipoService();
 
-        // Cargar clientes del .dat
-        clientes = clienteService.cargarClientes();
+        gym = new Gym();
 
-        if (clientes == null) {
-            clientes = new ArrayList<>();
+
+        gym.setClientes(clienteService.cargarClientes());
+
+        if (gym.getClientes() == null) {
+            gym.setClientes(new java.util.ArrayList<>());
         }
 
-        System.out.println("Clientes cargados: " + clientes.size());
+        gym.setAccesos(accesoService.cargarAccesos());
 
-        // Cargar vista principal
-        Parent root = FXMLLoader.load(
-                getClass().getResource("/org/example/gym_poo/views/MainView.fxml"));
+        if (gym.getAccesos() == null) {
+            gym.setAccesos(new java.util.ArrayList<>());
+        }
+
+        gym.setClases(claseService.cargarClases());
+
+        if (gym.getClases() == null) {
+            gym.setClases(new java.util.ArrayList<>());
+        }
+
+        gym.setEquipos(equipoService.cargarEquipos());
+        if (gym.getEquipos() == null) {
+            gym.setEquipos(new java.util.ArrayList<>());
+        }
+
+
+        System.out.println("Clientes cargados: " + gym.getClientes().size());
+        System.out.println("Accesos cargados: " + gym.getAccesos().size());
+        System.out.println("Clases cargadas: "+ gym.getClases().size());
+        System.out.println("Equipos cargados: "+ gym.getEquipos().size()
+        );
+
+        Parent root = FXMLLoader.load(getClass().getResource("/org/example/gym_poo/views/MainView.fxml"));
 
         Scene scene = new Scene(root);
 
-        stage.setScene(scene);
+        scene.getStylesheets().add(getClass().getResource("/css/styles.css").toExternalForm());
 
+        stage.setScene(scene);
         stage.setWidth(1600);
         stage.setHeight(800);
-
-
         stage.setResizable(false);
-
         stage.centerOnScreen();
-
         stage.show();
     }
 
-    public static ArrayList<Cliente> getClientes() {
-        return clientes;
-    }
 
     public static void main(String[] args) {
         launch();

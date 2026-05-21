@@ -6,139 +6,111 @@
 
 <AnchorPane prefHeight="800.0"
             prefWidth="1600.0"
+            styleClass="root-pane"
             xmlns="http://javafx.com/javafx/26"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="org.example.gym_poo.controllers.ActualizarClienteController">
 
    <children>
 
-      <Label layoutX="220.0"
-             layoutY="40.0"
-             text="Actualizar Cliente">
+      <AnchorPane prefWidth="220"
+                  prefHeight="800"
+                  styleClass="sidebar">
 
-         <font>
-            <Font size="22.0"/>
-         </font>
+         <children>
 
-      </Label>
+            <Label layoutX="35"
+                   layoutY="40"
+                   text="GYM_POO"
+                   styleClass="sidebar-title"/>
 
-      <!-- Buscar -->
+         </children>
 
-      <Label layoutX="80.0"
-             layoutY="100.0"
-             text="ID Cliente"/>
+      </AnchorPane>
 
+      <Label layoutX="280"
+             layoutY="40"
+             text="Actualizar Cliente"
+             styleClass="title"/>
+
+      <Label layoutX="280" layoutY="100" text="ID Cliente"/>
       <TextField fx:id="txtIdBuscar"
-                 layoutX="80.0"
-                 layoutY="125.0"/>
+                 layoutX="280"
+                 layoutY="125"/>
 
-      <Button layoutX="250.0"
-              layoutY="125.0"
+      <Button layoutX="450"
+              layoutY="125"
               text="Buscar"
               onAction="#buscarCliente"/>
 
-      <!-- Nombre -->
-
-      <Label layoutX="80.0"
-             layoutY="200.0"
-             text="Nombre"/>
-
+      <Label layoutX="280" layoutY="200" text="Nombre"/>
       <TextField fx:id="txtNombre"
-                 layoutX="80.0"
-                 layoutY="225.0"/>
+                 layoutX="280"
+                 layoutY="225"/>
 
-      <!-- Telefono -->
-
-      <Label layoutX="80.0"
-             layoutY="280.0"
-             text="Telefono"/>
-
+      <Label layoutX="280" layoutY="280" text="Telefono"/>
       <TextField fx:id="txtTelefono"
-                 layoutX="80.0"
-                 layoutY="305.0"/>
+                 layoutX="280"
+                 layoutY="305"/>
 
-      <!-- Correo -->
-
-      <Label layoutX="80.0"
-             layoutY="360.0"
-             text="Correo"/>
-
+      <Label layoutX="280" layoutY="360" text="Correo"/>
       <TextField fx:id="txtCorreo"
-                 layoutX="80.0"
-                 layoutY="385.0"/>
+                 layoutX="280"
+                 layoutY="385"/>
 
-      <!-- Membresia -->
-
-      <Label layoutX="450.0"
-             layoutY="200.0"
+      <Label layoutX="650"
+             layoutY="200"
              text="Membresia"/>
 
       <SplitMenuButton fx:id="btnMembresia"
-                       layoutX="450.0"
-                       layoutY="225.0"
-                       prefWidth="180.0"
+                       layoutX="650"
+                       layoutY="225"
+                       prefWidth="180"
                        text="--Ninguna--">
 
          <items>
-
-            <MenuItem text="Basica"
-                      onAction="#seleccionarBasica"/>
-
-            <MenuItem text="Plus"
-                      onAction="#seleccionarPlus"/>
-
-            <MenuItem text="Premium"
-                      onAction="#seleccionarPremium"/>
-
+            <MenuItem text="Basica" onAction="#seleccionarBasica"/>
+            <MenuItem text="Plus" onAction="#seleccionarPlus"/>
+            <MenuItem text="Premium" onAction="#seleccionarPremium"/>
          </items>
 
       </SplitMenuButton>
 
-      <!-- Activa -->
-
-      <Label layoutX="450.0"
-             layoutY="300.0"
+      <Label layoutX="650"
+             layoutY="300"
              text="Sub Activa"/>
 
       <SplitMenuButton fx:id="btnActiva"
-                       layoutX="450.0"
-                       layoutY="325.0"
-                       prefWidth="180.0"
+                       layoutX="650"
+                       layoutY="325"
+                       prefWidth="180"
                        text="--Seleccionar--">
 
          <items>
-
-            <MenuItem text="Si"
-                      onAction="#seleccionarActivaSi"/>
-
-            <MenuItem text="No"
-                      onAction="#seleccionarActivaNo"/>
-
+            <MenuItem text="Si" onAction="#seleccionarActivaSi"/>
+            <MenuItem text="No" onAction="#seleccionarActivaNo"/>
          </items>
 
       </SplitMenuButton>
 
-      <!-- Puntos -->
-
-      <Label layoutX="450.0"
-             layoutY="400.0"
+      <Label layoutX="650"
+             layoutY="400"
              text="Puntos"/>
 
       <TextField fx:id="txtPuntos"
-                 layoutX="450.0"
-                 layoutY="425.0"/>
+                 layoutX="650"
+                 layoutY="425"/>
 
-      <!-- Botones -->
-
-      <Button layoutX="80.0"
-              layoutY="520.0"
+      <Button layoutX="280"
+              layoutY="520"
               text="Guardar Cambios"
               onAction="#guardarCambios"/>
 
-      <Button layoutX="240.0"
-              layoutY="520.0"
+      <Button layoutX="460"
+              layoutY="520"
               text="Volver al Inicio"
               onAction="#volverMain"/>
 
    </children>
+
 </AnchorPane>
