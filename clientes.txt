@@ -1,0 +1,160 @@
+ID: 1
+Nombre: Diego
+Telefono: 8123
+Correo: diego@gmail.com
+Membresia: Plus
+Activa: Si
+Metodo de pago: Tarjeta
+Puntos: 120
+-----------------------------
+
+ID: 3
+Nombre: Luis
+Telefono: 8222
+Correo: luis@gmail.com
+Membresia: Basica
+Activa: Si
+Metodo de pago: Transferencia
+Puntos: 60
+-----------------------------
+
+ID: 5
+Nombre: Emiliano Rodriguez
+Telefono: 1234567890
+Correo: emi@correo.com
+Membresia: Plus
+Activa: Si
+Metodo de pago: Efectivo
+Puntos: 20
+-----------------------------
+
+ID: 6
+Nombre: Emiliano Espinoza
+Telefono: 1234512345
+Correo: emi.es@correo.com
+Membresia: Premium
+Activa: Si
+Metodo de pago: Tarjeta
+Puntos: 110
+-----------------------------
+
+ID: 7
+Nombre: Fausto Murillo
+Telefono: 123214141
+Correo: fausto@correo.com
+Membresia: Plus
+Activa: Si
+Metodo de pago: Tarjeta
+Puntos: 0
+-----------------------------
+
+ID: 8
+Nombre: Enrique Rojas
+Telefono: 1234123443
+Correo: enriq@correo.com
+Membresia: Plus
+Activa: Si
+Metodo de pago: Transferencia
+Puntos: 0
+-----------------------------
+
+ID: 9
+Nombre: Miguel Emiliano
+Telefono: 1231231233
+Correo: migem@correo.com
+Membresia: Premium
+Activa: Si
+Metodo de pago: Tarjeta
+Puntos: 0
+-----------------------------
+
+ID: 10
+Nombre: Cliente rnaom
+Telefono: 2134124312
+Correo: random@cliente.com
+Membresia: Plus
+Activa: Si
+Metodo de pago: Efectivo
+Puntos: 0
+-----------------------------
+
+ID: 11
+Nombre: Cristo Alexander
+Telefono: 12321421321
+Correo: criale@correo.com
+Membresia: Premium
+Activa: Si
+Metodo de pago: Efectivo
+Puntos: 0
+-----------------------------
+
+ID: 12
+Nombre: Monserrat Leva
+Telefono: 1234567867
+Correo: mon@correo.com
+Membresia: Basica
+Activa: Si
+Metodo de pago: Efectivo
+Puntos: 0
+-----------------------------
+
+ID: 13
+Nombre: Gerardo Reyes
+Telefono: 1234123456
+Correo: gerrey@correo.com
+Membresia: Basica
+Activa: Si
+Metodo de pago: Tarjeta
+Puntos: 0
+-----------------------------
+
+ID: 14
+Nombre: Marco Ezq
+Telefono: 1232154215
+Correo: marcqez@correo.com
+Membresia: Basica
+Activa: Si
+Metodo de pago: Tarjeta
+Puntos: 0
+-----------------------------
+
+ID: 15
+Nombre: Marc Marqiez
+Telefono: 32567632233
+Correo: marzmqr@correo.com
+Membresia: Plus
+Activa: Si
+Metodo de pago: Transferencia
+Puntos: 0
+-----------------------------
+
+ID: 16
+Nombre: Alex Marquez
+Telefono: 12321421421
+Correo: alexmar@correo.com
+Membresia: Plus
+Activa: Si
+Metodo de pago: Tarjeta
+Puntos: 0
+-----------------------------
+
+ID: 17
+Nombre: Valentino Rossi
+Telefono: 123213213213
+Correo: valentirossi@correo.com
+Membresia: Plus
+Activa: Si
+Metodo de pago: Efectivo
+Puntos: 0
+-----------------------------
+
+ID: 18
+Nombre: Marco Bezzechi
+Telefono: 12321321321
+Correo: marcbez@correo.com
+Membresia: Basica
+Activa: Si
+Metodo de pago: Transferencia
+Puntos: 0
+-----------------------------
+

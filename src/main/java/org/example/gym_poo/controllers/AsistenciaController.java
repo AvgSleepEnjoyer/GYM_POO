@@ -210,28 +210,50 @@ public class AsistenciaController {
     @FXML
     private void registrarSalida() {
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        DateTimeFormatter formatter =
+                DateTimeFormatter.ofPattern(
+                        "yyyy-MM-dd HH:mm:ss"
+                );
 
         if (accesoActual == null) {
-            mostrarMensaje("No hay acceso activo");
+
+            mostrarMensaje(
+                    "No hay acceso activo"
+            );
+
             return;
         }
 
-        String horaSalida = txtSalidaManual.getText().trim();
+        String horaSalida =
+                txtSalidaManual.getText().trim();
 
-        // si no escriben nada → usa hora actual
         if (horaSalida.isEmpty()) {
-            horaSalida = LocalDateTime.now().format(formatter);
+
+            horaSalida =
+                    LocalDateTime.now()
+                            .format(formatter);
         }
 
-        accesoActual.setHoraSalida(horaSalida);
+        accesoActual.setHoraSalida(
+                horaSalida
+        );
+
+        // GUARDAR CAMBIOS EN EL ARCHIVO
+        new AccesoService().guardarAccesos(
+                MainApp.getGym().getAccesos()
+        );
 
         txtSalidaManual.clear();
         txtEntrada.clear();
         txtNombreSalida.clear();
         txtIdSalida.clear();
 
-        mostrarMensaje("Salida registrada correctamente");
+        accesoActual = null;
+        clienteSalida = null;
+
+        mostrarMensaje(
+                "Salida registrada correctamente"
+        );
     }
 
     @FXML

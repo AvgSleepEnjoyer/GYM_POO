@@ -1,0 +1,68 @@
+===== REPORTE DE ACCESOS =====
+
+ID Acceso: 1
+ID Cliente: 1
+Nombre: Diego
+Entrada: 2026-05-21T12:10:48.812023111
+Salida: 2026-05-21 19:21:55
+---------------------------------
+ID Acceso: 2
+ID Cliente: 1
+Nombre: Diego
+Entrada: 2026-05-21T16:55:00.228962736
+Salida: 2026-05-21 16:21:50
+---------------------------------
+ID Acceso: 3
+ID Cliente: 1
+Nombre: Diego
+Entrada: 2026-05-21 16:59:09
+Salida: 
+---------------------------------
+ID Acceso: 4
+ID Cliente: 1
+Nombre: Diego
+Entrada: 2026-05-21 17:00:08
+Salida: 
+---------------------------------
+ID Acceso: 5
+ID Cliente: 4
+Nombre: Emilio Rodriguez
+Entrada: 2026-05-21 17:03:26
+Salida: 
+---------------------------------
+ID Acceso: 6
+ID Cliente: 1
+Nombre: Diego
+Entrada: 2026-05-21 19:13:20
+Salida: 
+---------------------------------
+ID Acceso: 7
+ID Cliente: 1
+Nombre: Diego
+Entrada: 2026-05-21 19:21:42
+Salida: 
+---------------------------------
+ID Acceso: 8
+ID Cliente: 5
+Nombre: Emiliano Rodriguez
+Entrada: 2026-05-21 19:25:56
+Salida: 2026-05-21 19:26:00
+---------------------------------
+ID Acceso: 9
+ID Cliente: 3
+Nombre: Luis
+Entrada: 2026-05-21 19:26:19
+Salida: 2026-05-21 19:26:25
+---------------------------------
+ID Acceso: 10
+ID Cliente: 5
+Nombre: Emiliano Rodriguez
+Entrada: 2026-05-21 19:26:33
+Salida: 2026-05-21 19:26:38
+---------------------------------
+ID Acceso: 11
+ID Cliente: 6
+Nombre: Emiliano Espinoza
+Entrada: 2026-05-21 19:28:38
+Salida: 2026-05-21 19:28:52
+---------------------------------
